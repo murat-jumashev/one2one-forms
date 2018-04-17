@@ -1,3 +1,9 @@
 from django.shortcuts import render
+from .forms import UserForm
 
-# Create your views here.
+
+def index(request):
+    context = {
+        'form': UserForm()
+    }
+    return render(request, 'one2one/index.html', context)
